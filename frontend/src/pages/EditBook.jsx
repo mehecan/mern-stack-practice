@@ -11,11 +11,12 @@ const EditBook = () => {
   const navigate = useNavigate();
   const { id } = useParams();
   const { enqueueSnackbar } = useSnackbar();
+  const API_URL = import.meta.env.VITE_BACKEND_API_URL;
 
   useEffect(() => {
     setLoading(true);
     axios
-      .get(`http://localhost:5555/books/${id}`)
+      .get(`${API_URL}/books/${id}`)
       .then((response) => {
         setAuthor(response.data.author);
         setTitle(response.data.title);
@@ -35,7 +36,7 @@ const EditBook = () => {
     };
     setLoading(true);
     axios
-      .put(`http://localhost:5555/books/${id}`, data)
+      .put(`${API_URL}/books/${id}`, data)
       .then(() => {
         setLoading(false);
         enqueueSnackbar("Successfully edited book!", { variant: "success" });

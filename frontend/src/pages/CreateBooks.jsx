@@ -11,6 +11,7 @@ const CreateBooks = () => {
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
   const { enqueueSnackbar } = useSnackbar();
+  const API_URL = import.meta.env.VITE_BACKEND_API_URL;
 
   const handleSaveBook = () => {
     const data = {
@@ -19,7 +20,7 @@ const CreateBooks = () => {
     };
     setLoading(true);
     axios
-      .post("http://localhost:5555/books", data)
+      .post(`${API_URL}/books`, data)
       .then(() => {
         setLoading(false);
         enqueueSnackbar("Successfully created book!", { variant: "success" });
