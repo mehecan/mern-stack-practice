@@ -33,7 +33,7 @@ const Home = () => {
           <h1 className="text-3xl text-white text-center">Books</h1>
         </div>
         <Link to="/books/create">
-          <button className="border border-slate-700 rounded-md text-sky-800 text-2xl p-2 bg-white mr-2">
+          <button className="border border-slate-700 rounded-md text-black text-lg p-2 bg-white mr-2">
             Create Book
           </button>
         </Link>
