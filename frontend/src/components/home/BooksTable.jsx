@@ -13,7 +13,9 @@ const BooksTable = ({ books }) => {
           <th className="border border-slate-600 rounded-md max-md:hidden bg-white">
             Author
           </th>
-          <th className="border border-slate-600 rounded-md bg-white">Actions</th>
+          <th className="border border-slate-600 rounded-md bg-white">
+            Actions
+          </th>
         </tr>
       </thead>
       <tbody>
@@ -25,12 +27,11 @@ const BooksTable = ({ books }) => {
             <td className="border border-slate-700 rounded-md text-center bg-white">
               {book.title}
             </td>
-            <td className="border border-slate-700 rounded-md text-center max-md:hidden bg-white" >
+            <td className="border border-slate-700 rounded-md text-center max-md:hidden bg-white">
               {book.author}
             </td>
             <td className="border border-slate-700 rounded-md text-center bg-white">
               <div className="flex justify-center gap-x-4">
-
                 <Link to={`/books/edit/${book._id}`}>
                   <AiOutlineEdit className="text-2xl text-yellow-600" />
                 </Link>
